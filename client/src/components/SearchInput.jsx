@@ -15,10 +15,10 @@ const SearchInput = () => {
   };
 
   return (
-    <div className="searchForm w-24 sm:w-3/4 bg-slate-100">
+    <div className="searchForm xs:min-w-full sm:w-full lg:w-2/3 bg-slate-100">
       <TextField
         type="text"
-        fullWidth={true}
+        fullWidth
         id="searchInput"
         placeholder="Search..."
         variant="standard"

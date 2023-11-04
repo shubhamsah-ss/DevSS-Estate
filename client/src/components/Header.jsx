@@ -22,11 +22,8 @@ const Header = () => {
           <Typography variant="h2" className={styleClass.header2}>
             Estate
           </Typography>
-          <Grid2 className="sm:hidden mx-auto">
-            <SearchInput />
-          </Grid2>
         </Grid2>
-        <Grid2 xs={12} sm={3} md={4.5} className="p-3 hidden sm:block">
+        <Grid2 xs={12} sm={3} md={4.5} className="p-3">
           <SearchInput />
         </Grid2>
         <Grid2 xs={12} sm={5} md={3} className="p-3">
