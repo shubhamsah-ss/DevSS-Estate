@@ -10,11 +10,15 @@ app.use(morgan('dev'))
 
 
 // DATABASE CONNECTIONS
-mongoose.connect(process.env.MONGO_URI).then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log("Database connection established");
 }).catch(error => {
     console.log(error);
 })
+
+
+// ROUTES
+app.use('/api/users', require('./routes/userRouter'))
 
 
 app.listen(process.env.PORT,() => {
