@@ -7,7 +7,7 @@ const app = express()
 
 // MIDDLEWARES
 app.use(morgan('dev'))
-
+app.use(express.json())
 
 // DATABASE CONNECTIONS
 mongoose.connect(process.env.MONGODB_URI).then(() => {
@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 
 // ROUTES
 app.use('/api/users', require('./routes/userRouter'))
+app.use('/api/auth', require('./routes/authRouter'))
 
 
 app.listen(process.env.PORT,() => {
