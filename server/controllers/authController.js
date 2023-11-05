@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
 
+
 const registerCtrl = async (req, res, next) => {
   const { username, email, password } = req.body;
 
@@ -14,9 +15,13 @@ const registerCtrl = async (req, res, next) => {
 
   try {
     await newUser.save();
-    res.status(201).json({ message: "User created successfully" });
+    // return res.status(201).json({ message: "User created successfully" });
+    res.sendSuccess(201, "User created successfully");
+    
   } catch (error) {
-    next(error);
+    // return res.status(500).json({ error: error.message });
+    // next(error);
+    res.sendError(500, error.message);
   }
 };
 

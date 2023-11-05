@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import "./App.css";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -8,7 +7,7 @@ import Profile from "./pages/Profile";
 import { LSData, title_name } from "./utils";
 import { useEffect } from "react";
 import Header from "./components/Header";
-import CssBaseline from '@mui/material/CssBaseline';
+import "./App.css";
 
 function App() {
 
@@ -24,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <CssBaseline />
+
       <Header />
       <Routes>
         <Route path="/" element={user? <Home /> : <Signin />} />
